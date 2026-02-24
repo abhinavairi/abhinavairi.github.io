@@ -111,10 +111,11 @@ export default function App() {
             <Card.Body>
               <Row className="align-items-center g-4">
                 <Col lg={8}>
-                  <h1 className="mb-2">Building enterprise-scale applications with cloud-native architecture.</h1>
+                  <h1 className="mb-2">Building scalable full-stack systems with microservices, microfrontends, and cloud-native infrastructure.</h1>
                   <p className="lead mb-3">
-                    I'm Abhinav Airi — a Software Engineer at Elsevier India with 7+ years of experience 
-                    in full-stack development, microservices, and DevOps on AWS.
+                    I'm Abhinav — a full-stack engineer with 7+ years of experience. I build backend services with Spring Boot, 
+                    frontend apps with React and TypeScript, and deploy them on AWS. I've worked on microservices, microfrontends, 
+                    CI/CD pipelines, and identity management — mostly for large-scale enterprise platforms.
                   </p>
                   <div className="d-flex flex-wrap gap-2">
                     <a className="btn btn-primary" href="#experience">View experience</a>
