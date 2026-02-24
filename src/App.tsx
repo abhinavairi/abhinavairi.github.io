@@ -96,12 +96,6 @@ const projects: Project[] = [
     description:
       'Developed a micro-frontend web application using React, TypeScript, Single Spa, and Webpack to enable seamless integration of multiple independent modules into a unified user interface, enhancing scalability and maintainability.',
     tags: ['React', 'TypeScript', 'Single Spa', 'Webpack']
-  },
-  {
-    title: 'Nexus Web Application',
-    description:
-      'Developed a micro-frontend web application using React, TypeScript, Single Spa, and Webpack to enable seamless integration of multiple independent modules into a unified user interface, enhancing scalability and maintainability.',
-    tags: ['React', 'TypeScript', 'Single Spa', 'Webpack']
   }
 ]
 
@@ -132,10 +126,6 @@ export default function App() {
                     <div className="text-muted small">Currently</div>
                     <div className="fw-semibold">Software Engineer III</div>
                     <div className="text-muted">Elsevier India • Bangalore</div>
-                    <div className="d-flex align-items-center gap-2 mt-2">
-                      <FontAwesomeIcon icon={faLocationDot} />
-                      <span>Open to opportunities</span>
-                    </div>
                     <div className="d-flex gap-3 mt-3">
                       <a className="text-decoration-none" href="https://github.com/abhinavairi" aria-label="GitHub">
                         <FontAwesomeIcon icon={faGithub} size="lg" />
