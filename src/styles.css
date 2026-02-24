@@ -1,0 +1,349 @@
+/* Modern portfolio theme (Bootstrap-compatible)
+   - Clean, professional design
+   - Dark/light mode support
+   - Subtle enhancements
+*/
+
+:root {
+  --radius: 16px;
+  --radius-sm: 8px;
+}
+
+/* Dark theme (default) */
+html,
+[data-theme='dark'] {
+  --bg: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  --card: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+  --cardBg: rgba(255, 255, 255, 0.03);
+  --cardBorder: rgba(255, 255, 255, 0.1);
+  --text: #f0f0f0;
+  --textMuted: #a0a0a0;
+  --accent: #6366f1;
+  --accentHover: #818cf8;
+  --shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  --shadowHover: 0 12px 48px rgba(0, 0, 0, 0.4);
+  --navbarBg: rgba(26, 26, 46, 0.9);
+  --navbarBorder: rgba(255, 255, 255, 0.1);
+}
+
+/* Light theme */
+[data-theme='light'] {
+  --bg: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  --card: linear-gradient(135deg, #ffffff 0%, #fafbfc 100%);
+  --cardBg: #ffffff;
+  --cardBorder: #e5e7eb;
+  --text: #1a1a1a;
+  --textMuted: #6b7280;
+  --accent: #6366f1;
+  --accentHover: #4f46e5;
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  --shadowHover: 0 8px 32px rgba(0, 0, 0, 0.12);
+  --navbarBg: rgba(255, 255, 255, 0.95);
+  --navbarBorder: #e5e7eb;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  background-attachment: fixed;
+  letter-spacing: -0.01em;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+p,
+li,
+dt,
+dd,
+small,
+label,
+.form-text,
+.card-text,
+.card-title,
+.card-subtitle,
+.card-header,
+.card-footer,
+.navbar-brand,
+.navbar-text {
+  color: var(--text);
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--accentHover);
+}
+
+a:focus {
+  color: var(--accentHover);
+}
+
+/* Layout */
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  position: relative;
+}
+
+/* Navbar */
+.navbar {
+  background: var(--navbarBg) !important;
+  border-bottom: 1px solid var(--navbarBorder);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.navbar .navbar-brand {
+  font-size: 1.05rem;
+  letter-spacing: -0.02em;
+}
+
+.navbar .nav-link {
+  color: var(--textMuted) !important;
+  transition: color 0.2s ease;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link:focus {
+  color: var(--text) !important;
+}
+
+/* Section headings */
+h1,
+h2,
+h3,
+h4 {
+  letter-spacing: -0.025em;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 2.5rem;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+.text-primary {
+  color: var(--accent) !important;
+}
+
+.lead {
+  color: var(--textMuted);
+}
+
+.text-muted {
+  color: var(--textMuted) !important;
+}
+
+/* Cards */
+.card {
+  border: 1px solid var(--cardBorder);
+  background: var(--card);
+  background-color: var(--cardBg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  color: var(--text);
+  transition: all 0.3s ease;
+  overflow: hidden;
+  position: relative;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accentHover));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card .card-body {
+  padding: 1.75rem;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadowHover);
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+.card .card-text {
+  color: var(--textMuted);
+}
+
+/* Buttons */
+.btn {
+  border-radius: var(--radius-sm);
+  padding: 0.65rem 1.25rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.btn:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent), var(--accentHover));
+  border: 0;
+  color: #ffffff !important;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+.btn-primary:hover {
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
+  transform: translateY(-2px);
+  color: #ffffff !important;
+}
+
+.btn-outline-primary {
+  border: 2px solid var(--accent);
+  color: var(--accent) !important;
+  background: transparent;
+}
+
+.btn-outline-primary:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #ffffff !important;
+  transform: translateY(-2px);
+}
+
+.btn-outline-secondary {
+  border: 2px solid var(--cardBorder);
+  color: var(--text) !important;
+  background: transparent;
+}
+
+.btn-outline-secondary:hover {
+  background: var(--cardBg);
+  border-color: var(--accent);
+  color: var(--accent) !important;
+  transform: translateY(-2px);
+}
+
+/* Badges */
+.badge {
+  font-weight: 500;
+  border-radius: var(--radius-sm);
+  padding: 0.5rem 1rem !important;
+  transition: all 0.2s ease;
+}
+
+.badge.bg-secondary {
+  background: var(--cardBg) !important;
+  border: 1px solid var(--cardBorder);
+  color: var(--text);
+}
+
+/* Resume PDF container */
+object {
+  background: var(--card);
+  border-radius: var(--radius);
+}
+
+/* Footer */
+footer {
+  background: transparent !important;
+  border-top: 1px solid var(--navbarBorder);
+  transition: border-color 0.3s ease;
+}
+
+/* Better focus rings */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Custom scrollbar (webkit) */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--cardBorder);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--textMuted);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Ensure Bootstrap defaults don't render dark text on dark backgrounds */
+body {
+  color: var(--text);
+}
+
+.text-dark {
+  color: rgba(255, 255, 255, 0.92) !important;
+}
+
+/* Navbar toggler */
+.navbar .navbar-toggler {
+  border-color: var(--cardBorder);
+}
+
+.navbar .navbar-toggler:focus {
+  box-shadow: 0 0 0 0.2rem rgba(99, 102, 241, 0.25);
+}
+
+[data-theme='dark'] .navbar .navbar-toggler-icon {
+  filter: invert(1) brightness(1.2);
+}
+
+[data-theme='light'] .navbar .navbar-toggler-icon {
+  filter: none;
+}
