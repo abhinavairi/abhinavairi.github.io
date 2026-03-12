@@ -6,68 +6,12 @@ import { faEnvelope, faLocationDot } from '@fortawesome/free-solid-svg-icons'
 import Header from './components/Header'
 import About from './components/About'
 
-type Experience = {
-  title: string
-  company: string
-  location: string
-  period: string
-  highlights: string[]
-  tags: string[]
-}
-
 type Project = {
   title: string
   description: string
   tags: string[]
   links?: { label: string; href: string }[]
 }
-
-const experiences: Experience[] = [
-  {
-    title: 'Software Engineer III',
-    company: 'Elsevier India',
-    location: 'Bangalore, India',
-    period: 'Dec 2021 – Present',
-    highlights: [
-      'Designed and developed full-stack web application using Spring Boot (Java 17) microservices backend and Single-SPA microfrontend architecture with React and TypeScript, enabling manual curation and validation of research metadata entities.',
-      'Implemented REST APIs for registry operations handling data ingestion, validation, duplicate detection, entity resolution, and relationship management, ensuring seamless integration between frontend and backend systems.',
-      'Researched and implemented enterprise Single Sign-On with Azure Active Directory (Federated Identity Provider), AWS Cognito (Service Provider), and Microsoft Authentication Library (MSAL) for secure platform access.',
-      'Built and published reusable React + TypeScript component library packaged with Rollup as NPM module, accelerating development velocity and ensuring UI consistency across multiple teams and applications.',
-      'Designed CI/CD pipelines using Jenkins, Spinnaker, and GitHub Actions for automated AWS deployments via Terraform and Helm Charts, reducing deployment time by ~40% across all environments.',
-      'Optimized Terraform-based AWS infrastructure (EKS, S3, CloudFront, IAM), reducing operational costs by 25% while supporting high-volume data processing workflows.',
-      'Collaborated with tech lead, backend engineers, and product managers in Agile environment, participating in architecture reviews and technical decision-making to deliver scalable, cost-effective platform capabilities supporting entity resolution and metadata management.'
-    ],
-    tags: ['Spring Boot', 'Java 17', 'React', 'TypeScript', 'Single-SPA', 'AWS', 'Terraform', 'CI/CD', 'Azure AD', 'AWS Cognito', 'MSAL']
-  },
-  {
-    title: 'Software Engineer',
-    company: 'Aithent Technologies Pvt Ltd',
-    location: 'Gurugram, India',
-    period: 'Jan 2020 – Dec 2021',
-    highlights: [
-      'Developed backend services using Java, Jersey Framework (JAX-RS), and Oracle 11g for healthcare application, implementing secure data processing workflows compliant with healthcare industry standards.',
-      'Designed and implemented RESTful APIs with authentication/authorization mechanisms, ensuring secure and efficient processing of patient records and healthcare data.',
-      'Improved application performance through optimized SQL queries, database indexing, and refactored backend logic, enhancing system stability and response times.',
-      'Participated across full SDLC from requirement analysis through production release, collaborating with QA and product teams in Agile environment to deliver reliable, compliant solutions.',
-      'Optimized Oracle 11g database operations including stored procedures, triggers, and complex queries for high-volume healthcare transaction processing.'
-    ],
-    tags: ['Java', 'Jersey Framework', 'JAX-RS', 'Oracle 11g', 'REST APIs', 'Healthcare', 'SQL Optimization']
-  },
-  {
-    title: 'Software Engineer',
-    company: 'HappyMongo Online Solutions Pvt Ltd',
-    location: 'Bangalore, India',
-    period: 'June 2018 – Dec 2019',
-    highlights: [
-      'Maintained and enhanced legacy web applications built with native HTML, CSS, JavaScript, and jQuery, delivering new features and improving performance through code optimization and refactoring.',
-      'Led development of machine learning web application using Java, Struts Framework, and MySQL, enabling users to train models with images, voice, and video, with real-time prediction capabilities integrated with Python-based ML backend.',
-      'Designed and implemented MySQL database schemas and data models, ensuring optimal storage and retrieval performance for ML training data and application workflows.',
-      'Developed proof-of-concepts for emerging technologies including Web AR and 8th Wall, exploring augmented reality capabilities and demonstrating feasibility for product features.',
-      'Built responsive user interfaces using JavaScript, jQuery, and modern web technologies, collaborating with ML team to integrate Python models for training and prediction workflows.'
-    ],
-    tags: ['Java', 'Struts Framework', 'MySQL', 'JavaScript', 'jQuery', 'Machine Learning', 'Web AR', 'Python Integration']
-  }
-]
 
 const projects: Project[] = [
   {
@@ -118,8 +62,8 @@ export default function App() {
                     CI/CD pipelines, and identity management — mostly for large-scale enterprise platforms.
                   </p>
                   <div className="d-flex flex-wrap gap-2">
-                    <a className="btn btn-primary" href="#experience">View experience</a>
-                    <a className="btn btn-outline-secondary" href="#work">Projects</a>
+                    <a className="btn btn-primary" href="#work">View projects</a>
+                    <a className="btn btn-outline-secondary" href="#contact">Get in touch</a>
                   </div>
                 </Col>
                 <Col lg={4}>
@@ -148,48 +92,6 @@ export default function App() {
         {/* About */}
         <section className="mb-4">
           <About />
-        </section>
-
-        {/* Experience */}
-        <section className="mb-4" id="experience">
-          <Card className="shadow-sm">
-            <Card.Body>
-              <h2 className="text-primary mb-1">Professional Experience</h2>
-              <p className="text-muted mb-4">7+ years building scalable enterprise applications.</p>
-
-              {experiences.map((exp, idx) => (
-                <div key={exp.company} className={idx < experiences.length - 1 ? 'mb-4 pb-4 border-bottom border-secondary border-opacity-25' : ''}>
-                  <div className="d-flex justify-content-between align-items-start flex-wrap gap-2 mb-2">
-                    <div>
-                      <h4 className="mb-1">{exp.title}</h4>
-                      <div className="text-muted">
-                        {exp.company} • {exp.location}
-                      </div>
-                    </div>
-                    <Badge bg="secondary" className="px-3 py-2">
-                      {exp.period}
-                    </Badge>
-                  </div>
-
-                  <ul className="mb-3">
-                    {exp.highlights.map((highlight, i) => (
-                      <li key={i} className="text-muted mb-2">
-                        {highlight}
-                      </li>
-                    ))}
-                  </ul>
-
-                  <div className="d-flex flex-wrap gap-2">
-                    {exp.tags.map((tag) => (
-                      <Badge key={tag} bg="secondary" className="px-3 py-2">
-                        {tag}
-                      </Badge>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </Card.Body>
-          </Card>
         </section>
 
         {/* Work */}
